@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Parsidance
+	</title>
+	<link rel="stylesheet" type="text/css" href="PD.css" />
+	<link href='https://fonts.googleapis.com/css?family=Raleway:400,700,800' rel='stylesheet' type='text/css'>
+	<link rel="shortcut icon" href="favicon.ico"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.5/waypoints.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+	<script type="text/javascript">
+
+	
+
+		$(function() {
+				  	$('a[href*="#"]:not([href="#"])').click(function() {
+					    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+					      var target = $(this.hash);
+					      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+					      if (target.length) {
+					        $('html, body').animate({
+					          scrollTop: target.offset().top
+					        }, 700);
+			        	return false;
+			      		}
+		    		}
+		  		});
+			});
+
+		$(function(){
+
+		$('#lineUpPage').waypoint(function(direction) {
+			if(direction === 'down' ){
+    			$('.navItem').removeClass('default');
+    			$('.navItem').addClass('grey');
+    			$('.listItem').removeClass('defList');
+    			$('.listItem').addClass('greyList');
+    			$('#home').attr('src', './Images/home_white.png');				
+  			}
+  			else{
+    			$('.navItem').removeClass('grey');
+    			$('.navItem').addClass('default');
+    			$('.listItem').removeClass('greyList');
+    			$('.listItem').addClass('defList');
+    			$('#home').attr('src', './Images/home_black.png');
+  			}
+  		},
+		{
+			offset:'10%'
+		}
+		)
+
+		$('#heenEnWeer').waypoint(function(direction) {
+			if(direction === 'down' ){
+    			$('.navItem').removeClass('grey');
+    			$('.navItem').addClass('blue');
+    			$('.listItem').removeClass('greyList');
+    			$('.listItem').addClass('defList');
+    			$('#home').attr('src', './Images/home_black.png');	
+  			}
+  			else{
+    			$('.navItem').removeClass('blue');
+    			$('.navItem').addClass('grey');
+    			$('.listItem').removeClass('defList');
+    			$('.listItem').addClass('greyList');
+    			$('#home').attr('src', './Images/home_white.png');
+  			}
+  		},
+		{
+			offset:'10%'
+		}
+
+		)
+
+		$('#festivalTerrein').waypoint(function(direction) {
+			if(direction === 'down'){			
+    			$('.navItem').removeClass('blue');
+    			$('.navItem').addClass('default');	
+			}
+			else{	
+    			$('.navItem').removeClass('default');
+    			$('.navItem').addClass('blue');
+			}
+		},
+		{
+			offset: '10%'
+		}
+		)
+
+		$('#contactPage').waypoint(function(direction) {
+			if(direction === 'down' ){
+    			$('.navItem').removeClass('default');
+    			$('.navItem').addClass('grey');
+    			$('.listItem').removeClass('defList');
+    			$('.listItem').addClass('greyList');
+    			$('#home').attr('src', './Images/home_white.png');
+  			}
+  			else{
+    			$('.navItem').removeClass('grey');
+    			$('.navItem').addClass('default');
+    			$('.listItem').removeClass('greyList');
+    			$('.listItem').addClass('defList');
+    			$('#home').attr('src', './Images/home_black.png');
+  			}
+
+		},
+		{
+			offset: '10%'
+		}
+
+		)
+
+	});
+
+
+	</script>
+</head>	
+<body>
+	<!-- Scroll effect script
+	$(window).scroll(function() {
+		    var distanceFromTop = $(window).scrollTop();
+		    var fixedHeenEnWeerTop = $('#landingPage').height() + $('#lineUpPage').height();
+		    if (distanceFromTop >= fixedHeenEnWeerTop) {
+		        $('#locatieFoto').addClass('fixed');
+		    } else {
+		        $('#locatieFoto').removeClass('fixed');
+		    }
+		    var fixedTerreinTop = $('#landingPage').height() + $('#lineUpPage').height() + $('#heenEnWeer').height();
+		    if (distanceFromTop >= fixedTerreinTop) {
+		        $('#terreinFoto').addClass('fixed');
+		    } else {
+		        $('#terreinFoto').removeClass('fixed');
+		    }
+		    var fixedDrankTop = $('#landingPage').height() + $('#lineUpPage').height() + $('#heenEnWeer').height() + $('#festivalTerrein').height();
+		    if (distanceFromTop >= fixedDrankTop) {
+		        $('#drankFoto').addClass('fixed');
+		    } else {
+		        $('#drankFoto').removeClass('fixed');
+		    }
+		});-->
+<header>
+	<div id="nav">
+		<ul class="menu">
+			<li class="listItem deflist"><a class="navItem default tickets">TICKETS</a></li>
+			<li class="listItem deflist"><a href="#footer" class="navItem default">PARTNERS</a></li>
+			<li class="listItem deflist"><a href="#contactPage" class="navItem default">CONTACT</a></li>
+			<li class="listItem deflist"><a href="#heenEnWeer" class="navItem default">INFO</a></li>
+			<li class="listItem deflist"><a href="#lineUpPage" class="navItem default">LINE UP</a></li>
+			<li class="listItem deflist"><a href="#landingPage" class="navItem default"><img id="home" src="./Images/home_black.png"/></a></li>
+		</ul>
+	</div>
+</header>
+<div id="wrapper">
+	<!--<img id="terreinFoto" src="./Images/festivalterrein.png"/>
+	<img id="locatieFoto" src="./Images/heen_en_weer.png"/>
+	<img id="drankFoto" src="./Images/eten_en_drinken.png"/>
+	<img id="contactFoto" src="./Images/contact.jpg"/>-->
+	<div class="section" id="landingPage">
+
+		<img id="logo" src="./Images/Logo.png"/>
+
+		<img id="nameDate" src="./Images/name_date.png"/>	
+
+	</div>
+	<div class="section" id="lineUpPage">
+		<img id="lineupLogo" src="./Images/line_up_vlekken.png"/>	
+
+		<div id="theMain">
+			MAIN STAGE
+		</div>
+
+		<div id="theFarm">
+			THE FARM
+		</div>
+	</div>
+
+	<div class="section" id="heenEnWeer">
+
+		<div class="leftContent">
+			<h1 id="heenEnWeerHeader">HEEN & WEER</h1>
+			<p id="heenEnWeerTekst">
+				Het festival gaat door op de terreinen van Scouts Parsifal Rumbeke. Deze zijn bereikbaar via de Koestraat 20, 8880 Roeselare. De meest aangewezen transportmiddelen van en naar Parsidance zijn <span style="color:#EE4F3A">de fiets en het openbaar vervoer</span>. Er is namelijk zo goed als <span style="color:#EE4F3A">geen parking</span> te vinden in de buurt van het festival.</br></br>
+				Er wordt een <span style="color:#EE4F3A">grote fietsparking</span> voorzien op het terrein, waar stewards geregeld zullen controleren op veiligheid en orde. Bussen van de stadslijn 6 rijden tot op korte wandelafstand van het festival (halte Rumbeke Dorp).</br></br>
+				Een andere optie: laat je brengen en ophalen op  onze <span style="color:#EE4F3A">Kiss&Ride-zone</span> vlakbij het festival.
+			</p>
+		</div>
+		<img id="locatieFoto" class="backGround" src="./Images/heen_en_weer.png"/>
+	</div>
+
+	<div class="section" id="festivalTerrein">
+		<div class="leftContent">
+			<h1 id="festivalTerreinHeader">HET FESTIVALTERREIN</h1>
+			<p id="festivalTerreinTekst">
+				<span style="color:#95C11F">Wel welkom:</span><br/>
+				kleine en middelgrote rug-of andere zakken, mobiele telefoons, sigaretten, niet-professionele film-of fotocamera's, plastiek en dekens om op te zitten/liggen.<br/><br/>
+				<span style="color:#EE4F3A">Niet welkom:</span><br/>
+				scherpe voorwerpen, wapens, vuurwerk, explosieven, kettingen, tenten en ander kampeermateriaal, geluidsopnamemateriaal, professionele camera's, fotostatieven (tripods), laserpennen, selfiesticks, drones, glas, flessen (plastic & glas), drinkbussen, stoelen, grote rugzakken, gasbranders, dieren, flyers en stickers.
+			</p>
+		</div>
+		<div class="rightContent">
+			<h1 id=EHBOHeader>EERSTE HULP</h1>
+			<p id="EHBOTekst">
+				Hulpverleners van het Rode Kruis zullen aanwezig zijn op het festivalterrein. Je kan voor zowel kleine als grote zorgen bij hen terecht aan de hulppost. Deze zal duidelijk aangeduid zijn op het terrein.
+			</p>
+			<h1 id=lockersHeader>LOCKERS</h1>
+			<p id="lockersTekst">
+				Voor al wie persoonlijke spullen veilig achter slot en grendel wil bewaren, zullen er lockers beschikbaar zijn. Met je unieke sleutel kan je tijdens de festivaluren steeds bij je bezittingen.
+			</p>
+		</div>
+		<img id="terreinFoto" class="backGround" src="./Images/festivalterrein.png"/>
+			
+	</div>
+	
+	<div class="section" id="etenEnDrinken">	
+		<div class="leftContent">
+			<h1 id="festivalTerreinHeader">ETEN & DRINKEN</h1>
+			<p id="festivalTerreinTekst">
+				Op de festivalsite kan je drankbonnen verkrijgen aan democratische prijzen. Daarmee kan je aan de verschillende bars zowel frisdranken als alcoholische consumpties verkrijgen.</br></br>
+				Ook het eten kan je terugvinden op het festival zelf, al zijn daar geen bonnetjes voor te verkrijgen. Je kan cash betalen aan de eetstanden zelf.
+			</p>
+		</div>
+		<div class="rightContent">
+			<h1 id=EHBOHeader>VERKINDERE</h1>
+			<p id="EHBOTekst">
+				Voor de typische festivalsnacks moet je bij de truck van Catering Verkindere zijn. Je kan er gegarandeerd je grote en kleine honger of 'goesting' stillen.</br> De betaling gebeurt cash, zonder bonnetjes.
+			</p>
+			<h1 id=lockersHeader>KARIBU</h1>
+			<p id="lockersTekst">
+				Zin in iets anders? Laat u verrassen door de exotische smaken van krokodil, kangoeroe en iberico bij de foodtruck van Karibu!</br> De betaling gebeurt cash, zonder bonnetjes.
+			</p>
+		</div>
+		<img id="drankFoto" class="backGround" src="./Images/eten_en_drinken.png"/>
+	</div>
+
+	<div class="section" id="contactPage">
+		<div class="leftContent" style="margin-top: 5%;">
+				<h1 id="lockersHeader">MAIL</h1>
+				<form id="lockersTekst" class="contactForm" action="contact.php" method="post">
+					<table>
+						<tr>
+							<td>Naam:* </td>
+							<td><input type="text" name="name" /></td>
+						</tr>
+						<tr>
+							<td>E-mail:* </td>
+							<td><input type="text" name="email" /></td>
+						</tr>
+						<tr>
+							<td style="vertical-align:top;">Bericht:* </td>
+							<td><textarea name="message" id="textArea"/></textarea></td>
+						</tr>
+						<tr>
+							<td>
+								Wat is 2 + 2 ? (Anti-spam)*
+							</td>
+							<td>
+								<input type="text" name="human"/>
+							</td>							
+						</tr>
+						<tr>
+							<td colspan="2" style="text-align: right;">
+								<input type="submit" value="Verzenden" id="contactButton"/>
+							</td>							
+						</tr>
+				    </table>
+				</form>	
+		</div>
+		<div class="rightContent" style="margin-top: 5%;">
+			<h1 id="EHBOHeader">CONTACT</h1>
+			<p id="EHBOTekst">
+				Indien je vragen hebt over Parsidance kan je ons steeds bereiken door het formulier in te vullen. Je kan ons ook steeds volgen op Facebook, Twitter, Instagram en Snapchat.
+			</p>
+		</div>	
+		<img id="contactFoto" class="backGround" src="./Images/contact.jpg"/>
+
+		<div id="footer">
+			<h1 id=heenEnWeerHeader style="opacity: 0.8;">ONZE PARTNERS:</h1>
+			<div id="footerTekst">
+				<img src="./Images/Logo's/Logo's met steun van kleur.png" class="sponsors">
+				<img src="./Images/Logo's/icoon vrijetijdspas witte tekst_1.jpg" class="sponsors">
+				<img src="./Images/Logo's/Logo's met steun van kleur.png" class="sponsors">
+				<img src="./Images/Logo's/Logo's met steun van kleur.png" class="sponsors">
+			</div>	
+		</div>
+		
+	</div>	
+</div>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+Parsidance
+
+
+
+Blauw: 
+RGB 47 119 180 
+#2f77b4
+
+
+Rood:
+RGB 225 74 50
+ #e14a32
+
+
+Grijs:
+RGB 26 26 27 
+#1a1a1b
+Groen: RGB 149 193 31 #95c11f
