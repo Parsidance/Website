@@ -16,19 +16,8 @@ body {
     overflow-x: hidden;
     width: 100vw;
 }
+    button::-moz-focus-inner { border: 0; }
 
-    body::-webkit-scrollbar {
-        width: 0;
-    }
-
-
-header {
-    position: fixed;
-    margin-top:0;
-    z-index: 300;
-    height: 50px;
-
-}
 
 #nav {
     position: fixed;
@@ -137,23 +126,6 @@ header {
     border-top: 2px solid rgba(255, 255, 255, .7);  
 }
 
-
-#logo { 
-    z-index: 0;
-    position: relative;
-    width: 50%; 
-    height: auto;
-    margin-right: 30%;
-    margin-left: 26%;   
-    margin-bottom: -2%;
-}
-
-#nameDate{
-    padding-left: 1%;
-    width: 25%;
-    height: auto;
-}
-
 #home{
     width:15px;
     height: 13px;
@@ -197,25 +169,6 @@ header {
     border:1px dotted;
 }
 
-#lineupLogo {
-    position: relative;
-    width: 20%; 
-    height: auto;
-    margin-right: 30%;
-    margin-left: 30%;    
-}
-
-.section{
-
-    text-align: center; 
-    position: relative;
-    top:0; 
-    bottom: 0;
-    left: 0;
-    min-height: 110vh;
-    width: 100%;  
-}
-
 #theMain{
     color:#FF0000;
     font-weight: bold;
@@ -243,26 +196,10 @@ header {
 #contactPage{
 }
 
-.leftContent{
-    padding-top: 10%;
-    float: left;
-    width: 29vw;
-    margin-left: 20%;
-    text-align: left;
-}
-
 h1{
     font-family: 'Raleway';
     font-weight: bold;  
     margin-bottom: -22px;
-}
-
-.rightContent{
-    padding-top: 10%;
-    float: right;
-    width: 29vw;
-    margin-right: 20%;
-    text-align: right;
 }
 
 #heenEnWeerHeader{
@@ -339,34 +276,29 @@ h1{
 }
 
 #mobileNav {
-  display: none;
-  position: fixed;
-  width: 100%;
-  top: 0;
+  margin-left: -200px;  
+  width:30vw;
+  height: 100vw;    
 }
 
-#mobileNavMenu {
-  display: none;
-  background-color: #5D138C;
+#mobileNav .menu {
+  background-color: #1A1A1B;
+  margin-top: 0
   padding-top:0;
-  width:100%;
+  width: 100%;
+  height: 100%;
+  list-style-type: none;
+  list-style-image: none;
 }
 
-#mobileNavMenu ul {
-    
-        list-style-type: none;
-        list-style-image: none;
-}
-
-#mobileNavMenu ul li a {
-                padding-bottom: 5px;
-                text-align: left;
-                text-decoration: none;
-                font-family: Verdana, Geneva, Tahoma, sans-serif;
-                font-size: small;
-                font-weight: lighter;
-                font-style: normal;
-                color: #FFFFFF;
+#mobileNav .menu .default{
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family:Helvetica, Verdana, Geneva, Tahoma, sans-serif;
+    text-align: left;
+    font-style: normal;
+    font-size: large;
+    font-weight: lighter;
 }
 
 #infoTiles{
@@ -376,31 +308,22 @@ h1{
 #hamburger {
   position: absolute;
   top: 15px;
-  right: 15px;
-  border: 0;
-  text-indent: 200%;
-  overflow: hidden;
-  background: rgba(255,255,255,0.8) url("http://i.imgur.com/vKRaKDX.png") center no-repeat;
-  border: 1px solid #ddd;
-  border-radius: 3px;
-  background-size: 80%;
-  width: 30px;
-  height: 30px;
+  left: 10px;
+  border:none;
+  width: 10vw;  
   outline: none;
+  padding:0;
+  background:none;
+}
+
+#hamburger img{
+    width: 100%;
+    margin-top: 10%;
+    margin-bottom: 10%;
 }
 
 .expand {
     display: block !important; 
-}
-
-footer {
-    position: relative;
-    bottom: 0;
-    text-align: center;
-    font-size: small;
-    vertical-align: bottom;
-    border-top: #0D4C6B thin;
-    : #0D4C6B;
 }
 
 .contactForm{
@@ -462,9 +385,15 @@ footer {
     vertical-align: center;
 }
 
+    .socialMedia{
+        width: 10%;
+        height: auto;
+        margin-left: 3%;
+    }
+
 /*This is all the css specifically for screens bigger than 720p*/
 
-@media screen and (min-width:1401px) {
+@media screen and (min-width:721px) {
     body {
     }
    
@@ -475,11 +404,19 @@ footer {
     footer{
     }
 
-    #nav{
-        display: block;s
+    header {
+        position: fixed;
+        margin-top:0;
+        z-index: 300;
+        height: 50px;
+
     }
 
-    #mobilNav{
+    #nav{
+        display: block;
+    }
+
+    #mobileNav{
         display: none;
     }
 
@@ -488,45 +425,84 @@ footer {
         padding: 0;
         left: 0;
         position: absolute;
-        width: 100vw;
+        width: 110vw;
         height: auto;
         z-index: -1;
     }
-}
 
-@media screen and (min-width: 721px) and (max-width: 1400px){
-        body {
-        }
-       
-        header, nav {
-            display: block;
-        }
-
-        footer{
-        }
-
-        #nav{
-            display: block;s
-        }
-
-        #mobilNav{
-            display: none;
-        }
-    .backGround{
-        margin: 0;
-        padding: 0;
-        left: 0;
-        position: absolute;
-        height: 100%;
-        width: auto;
-        overflow: auto;
-        z-index: -1;
+    .backGround img{
+        width: 100%;    
     }
+
+
+    #logo { 
+        z-index: 0;
+        position: relative;
+        width: 50%; 
+        height: auto;
+        margin-right: 30%;
+        margin-left: 26%;   
+        margin-bottom: -2%;
+    }
+
+    #nameDate{
+        padding-left: 1%;
+        width: 25%;
+        height: auto;
+    }
+
+    #lineupLogo {
+        position: relative;
+        width: 20%; 
+        height: auto;
+        margin-right: 30%;
+        margin-left: 30%;    
+    }
+
+    h1{
+        font-family: 'Raleway';
+        font-weight: bold;  
+        margin-bottom: -22px;
+    }
+
+    .leftContent{
+        padding-top: 10%;
+        float: left;
+        width: 29vw;
+        margin-left: 20%;
+        text-align: left;
+    }
+
+    .rightContent{
+        padding-top: 10%;
+        float: right;
+        width: 29vw;
+        margin-right: 20%;
+        text-align: right;
+    }
+
+    .section{
+
+        text-align: center; 
+        position: relative;
+        top:0; 
+        bottom: 0;
+        left: 0;
+        min-height: 110vh;
+        width: 100%;  
+    }
+
+    .contactForm{
+        display: block;
+    }
+
 }
+
+
 
 /*This is all the css for screens smaller than 720p (in other words, mobile devices)*/
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 721px) {
     body{
         width: 100%;
         margin-left:0;
@@ -535,6 +511,16 @@ footer {
 
     header,  footer {
         display: block;
+    }
+
+
+    header {
+        position: fixed;
+        margin-top:0;
+        z-index: 300;
+        width: 30vw;
+        height: 100vh;
+
     }
 
 
@@ -547,14 +533,10 @@ footer {
     }
     #mobileNav{
         display:block;
-    }
-
-    #logo{
-        width:40%;
-        float:left;
-        margin-left:25%;
-        top:-5px;
-        text-align:center;
+    }   
+    #mobileNav .menu{
+        width: 100px;
+        left: -100px;
     }
     #indexFoto{
         width:90%;
@@ -565,8 +547,74 @@ footer {
         padding: 0;
         left: 0;
         position: absolute;
-        height: 100vh;
+        height: 110vh;
         width: auto;
         z-index: -1;
+    }
+
+    #logo { 
+        z-index: 0;
+        width: 150%;
+        height: auto;   
+        position: relative;
+        margin-left: -22.5%;
+    }
+
+    #nameDate{
+        padding-left: 1%;
+        width: 75%;
+        height: auto;
+    }
+
+    #lineupLogo {
+        position: relative;
+        width: 50%; 
+        height: auto;
+        margin-left: 25%;  
+        margin-right: 25%;  
+    }
+
+    h1{
+        font-family: 'Raleway';
+        font-size: 30px;
+        font-weight: bold;  
+        margin-bottom: -22px;
+    }
+    
+    .leftContent{
+        padding-top: 2%;
+        float: left;
+        width: 80vw;
+        margin-left: 10%;
+        margin-right: 10%;
+        text-align: left;
+    }
+
+
+    .rightContent{
+        float: left;
+        width: 80vw;
+        margin-right: 10%;
+        margin-left: 10%;
+        text-align: left;
+    }
+
+    .section{
+
+        text-align: center; 
+        position: relative;
+        top:0; 
+        bottom: 0;
+        left: 0;
+        min-height: 100vh;
+        width: 100%;  
+    }
+
+    .contactForm{
+        display: none;
+    }
+
+    .contactHeader{
+        display: none;
     }
 }

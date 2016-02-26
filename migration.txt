@@ -1,0 +1,7 @@
+$wa = Get-SPWebApplication http://yourWebAppUrl 
+$acc = 'domain\user' 
+$arguments = New-Object Microsoft.SharePoint.Administration.SPWebApplication+SPMigrateUserParameters 
+$arguments.AddDatabaseToMigrate($wa.ContentDatabases[1]) 
+$wa.MigrateUsersToClaims($acc, $true, $arguments)
+
+=> script to migrate classic db to claims db
