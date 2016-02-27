@@ -25,13 +25,16 @@
 			      		}
 		    		}
 		  		});
-				  	$('#hamburger').click(function() {
-   						$('#mobileNav').animate({
-     						left: '-=200px'
-   						}, 500);
-				});
 
-		});
+				 $('#hamburger').click(function(){
+				 		$('#mobileNav').toggleClass('slideIn');
+				 		if($('#hamburgerIcon').attr('src') == './Images/hamburger_icon.png')
+   							$('#hamburgerIcon').attr('src', './Images/hamburger_icon_white.png');
+						else
+						   $('#hamburgerIcon').attr('src', './Images/hamburger_icon.png');
+				 });
+
+		}); 	
 
 		$(function(){
 
@@ -155,15 +158,15 @@
 			<li class="listItem deflist"><a href="#landingPage" class="navItem default"><img id="home" src="./Images/home_black.png"/></a></li>
 		</ul>
 	</div>
+		<button id="hamburger" style="outline: none;"><img id="hamburgerIcon" src="./Images/hamburger_icon.png"/></button>
 	<div id="mobileNav">
-		<button id="hamburger" style="outline: none;"><img src="./Images/hamburger_icon.png"/></button>
 		<ul class="menu">
-			<li class="listItem deflist"><a href="#landingPage" class="navItem default"><img id="home" src="./Images/home_black.png"/></a></li>
-			<li class="listItem deflist"><a href="#lineUpPage" class="navItem default">LINE UP</a></li>
-			<li class="listItem deflist"><a href="#heenEnWeer" class="navItem default">INFO</a></li>
-			<li class="listItem deflist"><a href="#contactPage" class="navItem default">CONTACT</a></li>
-			<li class="listItem deflist"><a href="#footer" class="navItem default">PARTNERS</a></li>
-			<li class="listItem deflist"><a class="navItem default tickets">TICKETS</a></li>
+			<li><a href="#landingPage"><img id="home" src="./Images/home_white.png"/></a></li>
+			<li><a href="#lineUpPage">LINE UP</a></li>
+			<li><a href="#heenEnWeer">INFO</a></li>
+			<li><a href="#contactPage">CONTACT</a></li>
+			<li><a href="#footer">PARTNERS</a></li>
+			<li><a class="tickets">TICKETS</a></li>
 		</ul>
 	</div>
 </header>
@@ -203,8 +206,8 @@
 		</div>
 		<div class="rightContent">
 			<h1 id="heenEnWeerHeader" style="text-align: right;">STRATENPLAN</h1>
-			<p id="heenEnWeerTekst" style="background: none;">
-				<img src="./Images/stratenplan.png" style="width: 80%; height: auto; padding:0;" />
+			<p id="heenEnWeerTekst" style="background: none; padding:0;">
+				<img src="./Images/stratenplan.png" style="width: 95%; height: auto;" />
 			</p>
 		</div>
 		<img id="locatieFoto" class="backGround" src="./Images/heen_en_weer.png"/>
@@ -257,7 +260,7 @@
 
 	<div class="section" id="contactPage">
 		<div class="leftContent" style="margin-top: 5%;">
-				<h1 id="lockersHeader">MAIL</h1>
+				<h1 id="lockersHeader" class="contactHeader">MAIL</h1>
 				<form id="lockersTekst" class="contactForm" action="contact.php" method="post">
 					<table>
 						<tr>
@@ -289,7 +292,7 @@
 				</form>	
 		</div>
 		<div class="rightContent" style="margin-top: 5%;">
-			<h1 id="EHBOHeader" class="contactHeader">CONTACT</h1>
+			<h1 id="EHBOHeader">CONTACT</h1>
 			<p id="EHBOTekst">
 				Indien je vragen hebt over Parsidance kan je ons steeds bereiken door het formulier in te vullen. Je kan ons ook steeds volgen op Facebook, Twitter en Instagram.</br></br></br>
 				<a href="https://www.facebook.com/Parsidance/?fref=ts"><img class="socialMedia" src="./Images/facebook.png" style="width: 5%"></a>

@@ -276,29 +276,51 @@ h1{
 }
 
 #mobileNav {
-  margin-left: -200px;  
-  width:30vw;
-  height: 100vw;    
+  float: left;
+  width:300px;
+  height: 100%;  
+  margin-left: -300px;  
+    -webkit-transition: all 500ms ease-in-out;
+  -moz-transition: all 500ms ease-in-out;
+  -o-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+}
+
+.slideIn{
+    margin-left:0 !important;  
+    -webkit-transition: all 500ms ease-in-out;
+  -moz-transition: all 500ms ease-in-out;
+  -o-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
 }
 
 #mobileNav .menu {
   background-color: #1A1A1B;
-  margin-top: 0
+  margin-top: 0;
   padding-top:0;
-  width: 100%;
   height: 100%;
   list-style-type: none;
   list-style-image: none;
+  padding-top: 35%; 
 }
 
-#mobileNav .menu .default{
+#mobileNav .menu li a{
     color: #FFFFFF;
     text-decoration: none;
     font-family:Helvetica, Verdana, Geneva, Tahoma, sans-serif;
     text-align: left;
     font-style: normal;
-    font-size: large;
+    font-size: xx-large;
     font-weight: lighter;
+}
+
+#mobileNav .menu li .tickets{
+    color: #EE4F3A;
+}
+
+#mobileNav .menu li a img{
+    width: 50px;
+    height: 45px;
 }
 
 #infoTiles{
@@ -306,7 +328,7 @@ h1{
 }
 
 #hamburger {
-  position: absolute;
+  position: fixed;
   top: 15px;
   left: 10px;
   border:none;
@@ -393,7 +415,7 @@ h1{
 
 /*This is all the css specifically for screens bigger than 720p*/
 
-@media screen and (min-width:721px) {
+@media screen and (orientation:landscape) {
     body {
     }
    
@@ -496,13 +518,15 @@ h1{
         display: block;
     }
 
+    #hamburger{
+        display: none;
+    }
+
 }
-
-
 
 /*This is all the css for screens smaller than 720p (in other words, mobile devices)*/
 
-@media screen and (max-width: 721px) {
+@media screen and (orientation:portrait) {
     body{
         width: 100%;
         margin-left:0;
@@ -518,7 +542,7 @@ h1{
         position: fixed;
         margin-top:0;
         z-index: 300;
-        width: 30vw;
+        width:30vw;
         height: 100vh;
 
     }
@@ -531,12 +555,19 @@ h1{
     #nav{
         display:none;
     }
+
+    #hamburger{
+        display: block;
+    }
+
     #mobileNav{
-        display:block;
+        display:inline;
     }   
     #mobileNav .menu{
-        width: 100px;
-        left: -100px;
+        left: -50px;
+    }
+    #mobileNav .menu ul li a{
+        font-size: large;
     }
     #indexFoto{
         width:90%;
