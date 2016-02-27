@@ -450,6 +450,7 @@ h1{
         width: 110vw;
         height: auto;
         z-index: -1;
+        overflow: hidden;
     }
 
     .backGround img{
@@ -521,6 +522,12 @@ h1{
     #hamburger{
         display: none;
     }
+
+#stratenPlanHeader{
+    color: #FFFFFF;
+    text-align: right;
+}
+
 
 }
 
@@ -648,4 +655,11 @@ h1{
     .contactHeader{
         display: none;
     }
+
+
+#stratenPlanHeader{
+    color: #FFFFFF;
+    text-align: left;
+}
+
 }
