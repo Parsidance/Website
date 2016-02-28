@@ -408,9 +408,10 @@ h1{
 }
 
     .socialMedia{
-        width: 10%;
-        height: auto;
-        margin-left: 3%;
+        margin-right: 3%;
+        height:5vh;
+        width: auto;
+
     }
 
 /*This is all the css specifically for screens bigger than 720p*/
@@ -502,6 +503,30 @@ h1{
         width: 29vw;
         margin-right: 20%;
         text-align: right;
+    }
+
+    .wholePageContent{
+        padding-top: 10%;
+        float: left;
+        width: 60vw;
+        margin-left: 20%;
+        text-align:left;
+    }
+
+    #heenEnWeerTekst{
+        font-size: smaller;
+    }
+
+    #festivalTerreinTekst{
+        font-size: smaller;
+    }
+
+    #EHBOTekst{
+        font-size: smaller;
+    }
+
+    #lockersTekst{    
+        font-size: smaller;
     }
 
     .section{
@@ -617,6 +642,7 @@ h1{
         font-size: 30px;
         font-weight: bold;  
         margin-bottom: -22px;
+        margin-top: 0;  
     }
     
     .leftContent{
@@ -635,6 +661,30 @@ h1{
         margin-right: 10%;
         margin-left: 10%;
         text-align: left;
+    }
+
+    .wholePageContent{
+        float: left;
+        width: 80vw;
+        margin-right: 10%;
+        margin-left: 10%;
+        text-align:left;
+    }
+
+    #heenEnWeerTekst{
+        font-size: medium;
+    }
+
+    #festivalTerreinTekst{
+        font-size: medium;
+    }
+
+    #EHBOTekst{
+        font-size: medium;
+    }
+
+    #lockersTekst{    
+        font-size: medium;
     }
 
     .section{
