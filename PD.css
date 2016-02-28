@@ -169,20 +169,31 @@ body {
     border:1px dotted;
 }
 
-#theMain{
-    color:#FF0000;
-    font-weight: bold;
-    text-decoration: underline;
-    width: 50%;
-    float: left;
+#theMainTitle{
+    color: #e14a32;
 }
 
-#theFarm{
-    color:#00A0FF;
-    font-weight: bold;
-    text-decoration: underline;
-    width: 50%;
-    float:left;
+#theMainText{
+    word-wrap: normal;
+    font-size: smaller;
+    padding:2%;
+}
+
+.mainArtist{
+    width: 80%;
+    height: auto;
+    padding: 0;
+}
+
+#theFarmTitle{
+    color: rgb(47, 119, 180);
+    opacity: .9;
+}
+
+#theFarmText{
+    word-wrap: normal;
+    font-size: smaller;
+    padding:2%;
 }
 
 #lineUpPage{
@@ -489,6 +500,20 @@ h1{
         margin-bottom: -22px;
     }
 
+    .mainStageContent{
+        position: absolute;
+        width: 29vw;
+        left:25vw;
+        text-align: center;
+    }
+
+    .farmContent{
+        position: absolute;
+        width: 29vw;
+        left:50vw;
+        text-align: center;
+    }
+
     .leftContent{
         padding-top: 10%;
         float: left;
@@ -536,7 +561,7 @@ h1{
         top:0; 
         bottom: 0;
         left: 0;
-        min-height: 110vh;
+        min-height: 100vh;
         width: 100%;  
     }
 
@@ -710,6 +735,22 @@ h1{
 #stratenPlanHeader{
     color: #FFFFFF;
     text-align: left;
+}
+
+}
+
+
+@media screen and (max-width: 1200px) {
+
+
+.backGround{
+    margin: 0;
+    padding: 0;
+    left: 0;
+    position: absolute;
+    height: 100vh;
+    width: auto;
+    z-index: -1;
 }
 
 }
