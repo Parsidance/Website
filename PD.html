@@ -6,10 +6,12 @@
 	</title>
 	<link rel="stylesheet" type="text/css" href="PD.css" />
 	<link href='https://fonts.googleapis.com/css?family=Raleway:400,700,800' rel='stylesheet' type='text/css'>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.css" rel="stylesheet" type="text/css"></script>
 	<link rel="shortcut icon" href="favicon.ico"/>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.5/waypoints.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
 	<script type="text/javascript">	
 
 		function resizeTopContent(){
@@ -45,6 +47,12 @@
 						else
 						   $('#hamburgerIcon').attr('src', './Images/hamburger_icon.png');
 				 });
+
+				$(".fancybox")
+						.attr('rel', 'gallery')
+					    .fancybox({
+					        padding : 0
+		    	});
 
 		}); 	
 
@@ -184,7 +192,7 @@
 						<a target="_blank" href="https://www.facebook.com/Freaquency.Ghent/?fref=ts"><img class="mainArtist" src="./Images/Mainstage/freaquency.png"/></a>
 						<a target="_blank" href="http://www.nexuzofficial.com"><img class="mainArtist" src="./Images/Mainstage/nexuz.png"/></a>
 						<a target="_blank" href="https://www.facebook.com/Audiophonic/?fref=ts"><img class="mainArtist" src="./Images/Mainstage/audiophonic.png"/></a>
-						<a target="_blank" href="https://www.facebook.com/blvckprintofficial"><img class="mainArtist" src="./Images/Mainstage/blvckprint.png"/>	
+						<a target="_blank" href="https://www.facebook.com/blvckprintofficial"><img class="mainArtist" src="./Images/Mainstage/blvckprint.png"/>	</a>
 					</p>
 				</div>
 
@@ -218,7 +226,7 @@
 				<div class="right content">
 					<h1 class="white">STRATENPLAN</h1>
 					<p id="heenEnWeerTekst" style="background: none; padding:0;">
-						<img src="./Images/stratenplan.png" style="width: 95%; height: auto;" />
+						<a class="fancybox" href="./Images/stratenplan.png"><img src="./Images/stratenplan.png" style="width: 95%; height: auto;" /></a>
 					</p>
 				</div>
 				<img id="locatieFoto" class="backGround" src="./Images/heen_en_weer.png"/>
@@ -299,8 +307,8 @@
 						<span style="color: #2f77b4; font-weight: bold;">QUAESTOR</span>
 						<span style="color: #e14a32; font-weight: bold;">NUYTTEN VERZEKERINGEN</span>
 						<span style="color: #2f77b4; font-weight: bold;">BONAFIDA</span>
-						<span style="color: #e14a32; font-weight: bold;">CIRQUE</span>
-						<span style="color: #2f77b4; font-weight: bold;">CAMERLYNCK</span>
+						<span style="color: #e14a32; font-weight: bold;">CIRQUE ROESELARE</span>
+						<span style="color: #2f77b4; font-weight: bold;">CAMERLYNCK & CAMERLYNCK</span>
 						<span style="color: #e14a32; font-weight: bold;">LUNETTE</span>
 						<span style="color: #2f77b4; font-weight: bold;">KBC RUMBEKE</span>
 						<span style="color: #e14a32; font-weight: bold;">SAN MARCO</span>
