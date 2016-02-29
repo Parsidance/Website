@@ -12,6 +12,18 @@
 	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 	<script type="text/javascript">	
 
+		function resizeTopContent(){
+    		$('section').css("min-height",$(window).height() );
+		}
+
+		$(document).ready(function() {
+		    resizeTopContent();
+		});
+
+		$(window).resize(function() {
+		    resizeTopContent();
+		});
+
 		$(function() {
 				  	$('a[href*="#"]:not([href="#"])').click(function() {
 					    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
@@ -27,7 +39,7 @@
 		  		});
 
 				 $('#hamburger').click(function(){
-				 		$('#mobileNav').toggleClass('slideIn');
+				 		$('.mobileNav').toggleClass('slideIn');
 				 		if($('#hamburgerIcon').attr('src') == './Images/hamburger_icon.png')
    							$('#hamburgerIcon').attr('src', './Images/hamburger_icon_white.png');
 						else
@@ -44,14 +56,14 @@
     			$('.navItem').addClass('grey');
     			$('.listItem').removeClass('defList');
     			$('.listItem').addClass('greyList');
-    			$('#home').attr('src', './Images/home_white.png');				
+    			$('.home').attr('src', './Images/home_white.png');				
   			}
   			else{
     			$('.navItem').removeClass('grey');
     			$('.navItem').addClass('default');
     			$('.listItem').removeClass('greyList');
     			$('.listItem').addClass('defList');
-    			$('#home').attr('src', './Images/home_black.png');
+    			$('.home').attr('src', './Images/home_black.png');
   			}
   		},
 		{
@@ -65,14 +77,14 @@
     			$('.navItem').addClass('blue');
     			$('.listItem').removeClass('greyList');
     			$('.listItem').addClass('defList');
-    			$('#home').attr('src', './Images/home_black.png');	
+    			$('.home').attr('src', './Images/home_black.png');	
   			}
   			else{
     			$('.navItem').removeClass('blue');
     			$('.navItem').addClass('grey');
     			$('.listItem').removeClass('defList');
     			$('.listItem').addClass('greyList');
-    			$('#home').attr('src', './Images/home_white.png');
+    			$('.home').attr('src', './Images/home_white.png');
   			}
   		},
 		{
@@ -102,14 +114,14 @@
     			$('.navItem').addClass('grey');
     			$('.listItem').removeClass('defList');
     			$('.listItem').addClass('greyList');
-    			$('#home').attr('src', './Images/home_white.png');
+    			$('.home').attr('src', './Images/home_white.png');
   			}
   			else{
     			$('.navItem').removeClass('grey');
     			$('.navItem').addClass('default');
     			$('.listItem').removeClass('greyList');
     			$('.listItem').addClass('defList');
-    			$('#home').attr('src', './Images/home_black.png');
+    			$('.home').attr('src', './Images/home_black.png');
   			}
 
 		},
@@ -124,220 +136,185 @@
 
 	</script>
 </head>	
-<body>
-	<!-- Scroll effect script
-	$(window).scroll(function() {
-		    var distanceFromTop = $(window).scrollTop();
-		    var fixedHeenEnWeerTop = $('#landingPage').height() + $('#lineUpPage').height();
-		    if (distanceFromTop >= fixedHeenEnWeerTop) {
-		        $('#locatieFoto').addClass('fixed');
-		    } else {
-		        $('#locatieFoto').removeClass('fixed');
-		    }
-		    var fixedTerreinTop = $('#landingPage').height() + $('#lineUpPage').height() + $('#heenEnWeer').height();
-		    if (distanceFromTop >= fixedTerreinTop) {
-		        $('#terreinFoto').addClass('fixed');
-		    } else {
-		        $('#terreinFoto').removeClass('fixed');
-		    }
-		    var fixedDrankTop = $('#landingPage').height() + $('#lineUpPage').height() + $('#heenEnWeer').height() + $('#festivalTerrein').height();
-		    if (distanceFromTop >= fixedDrankTop) {
-		        $('#drankFoto').addClass('fixed');
-		    } else {
-		        $('#drankFoto').removeClass('fixed');
-		    }
-		});-->
-<header>
-	<div id="nav">
-		<ul class="menu">
-			<li class="listItem deflist"><a class="navItem default tickets">TICKETS</a></li>
-			<li class="listItem deflist"><a href="#footer" class="navItem default">PARTNERS</a></li>
-			<li class="listItem deflist"><a href="#contactPage" class="navItem default">CONTACT</a></li>
-			<li class="listItem deflist"><a href="#heenEnWeer" class="navItem default">INFO</a></li>
-			<li class="listItem deflist"><a href="#lineUpPage" class="navItem default">LINE UP</a></li>
-			<li class="listItem deflist"><a href="#landingPage" class="navItem default"><img id="home" src="./Images/home_black.png"/></a></li>
-		</ul>
-	</div>
-		<button id="hamburger" style="outline: none;"><img id="hamburgerIcon" src="./Images/hamburger_icon.png"/></button>
-	<div id="mobileNav">
-		<ul class="menu">
-			<li><a href="#landingPage"><img id="home" src="./Images/home_white.png"/></a></li>
-			<li><a style="color: #e14a32;" href="#lineUpPage">MAIN STAGE</a></li>
-			<li><a style="color: rgb(47, 119, 180);" href="#theFarmTitle">THE FARM</a></li>
-			<li><a href="#heenEnWeer">INFO</a></li>
-			<li><a href="#contactPage">CONTACT</a></li>
-			<li><a href="#footer">PARTNERS</a></li>
-			<li style="background-color: white;"><a style="color: #1A1A1B;" class="tickets">TICKETS</a></li>
-		</ul>
-	</div>
-</header>
-<div id="wrapper">
-	<!--<img id="terreinFoto" src="./Images/festivalterrein.png"/>
-	<img id="locatieFoto" src="./Images/heen_en_weer.png"/>
-	<img id="drankFoto" src="./Images/eten_en_drinken.png"/>
-	<img id="contactFoto" src="./Images/contact.jpg"/>-->
-	<div class="section" id="landingPage">
+	<body>
+		<div id="bodyContent">
+			<header>
+				<nav>
+					<ul class="menu">
+						<li class="listItem deflist"><a target="_blank" href="https://shop.ticketscript.com/channel/web2/start-order/rid/67RR7KM4/language/nl" class="navItem default tickets">TICKETS</a></li>
+						<li class="listItem deflist"><a href="#footer" class="navItem default">PARTNERS</a></li>
+						<li class="listItem deflist"><a href="#contactPage" class="navItem default">CONTACT</a></li>
+						<li class="listItem deflist"><a href="#heenEnWeer" class="navItem default">INFO</a></li>
+						<li class="listItem deflist"><a href="#lineUpPage" class="navItem default">LINE UP</a></li>
+						<li class="listItem deflist"><a href="#landingPage" class="navItem default"><img class="home" src="./Images/home_black.png"/></a></li>
+					</ul>
+				</nav>
+					<button id="hamburger" style="outline: none;"><img id="hamburgerIcon" src="./Images/hamburger_icon.png"/></button>
+				<div class="mobileNav">
+					<ul class="menu">
+						<li><a href="#landingPage"><img id="home" src="./Images/home_white.png"/></a></li>
+						<li><a style="color: #e14a32;" href="#lineUpPage">MAIN STAGE</a></li>
+						<li><a style="color: rgb(47, 119, 180);" href="#theFarm">THE FARM</a></li>
+						<li><a href="#heenEnWeer">INFO</a></li>
+						<li><a href="#contactPage">CONTACT</a></li>
+						<li><a href="#footer">PARTNERS</a></li>
+						<li style="background-color: white;"><a style="color: #1A1A1B;" target="_blank" href="https://shop.ticketscript.com/channel/web2/start-order/rid/67RR7KM4/language/nl" class="tickets">TICKETS</a></li>
+					</ul>
+				</div>
+			</header>
+			<section id="landingPage">
 
-		<img id="logo" src="./Images/Logo.png"/>
+				<img class="logo" src="./Images/Logo.png"/>
 
-		<img id="nameDate" src="./Images/name_date.png"/>	
+				<img class="nameDate" src="./Images/name_date.png"/>	
 
-	</div>
-	<div class="section" id="lineUpPage">
-		<img id="lineupLogo" src="./Images/line_up_vlekken.png"/>	
+			</section>
+			<section id="lineUpPage">
+				<img class="logo" src="./Images/line_up_vlekken.png"/>	
+				<div class="left content">
+					<h1 class="red" style="text-align: center">MAIN STAGE</h1>
+					<p>				
+						<a target="_blank" href="https://www.facebook.com/WolfTeck/?fref=ts"><img class="mainArtist" src="./Images/Mainstage/wolfteck.png"/></a>	
+						<a target="_blank" href="https://www.facebook.com/skyentistbe/"><img class="mainArtist" src="./Images/Mainstage/skyentist.png"/></a>
+						<a target="_blank" href="https://www.facebook.com/Dj-Impulz-126762950731017/?fref=ts"><img class="mainArtist" src="./Images/Mainstage/djimpulz.png"/></a>
+						<a target="_blank" href="https://www.facebook.com/DJ-TIM-751495444936707/"><img class="mainArtist" src="./Images/Mainstage/djtim.png"/></a>
+						<a target="_blank" href="https://www.facebook.com/iamtdbdj/?fref=ts"><img class="mainArtist" src="./Images/Mainstage/tdb.png"/></a>
+						<a target="_blank" href="http://www.thehimmusic.com/"><img class="mainArtist" src="./Images/Mainstage/thehim.png"/></a>	
+						<a target="_blank" href="https://www.facebook.com/DennisCartier/?fref=ts"><img class="mainArtist" src="./Images/Mainstage/denniscartier.png"/></a>	
+						<a target="_blank" href="https://www.facebook.com/Freaquency.Ghent/?fref=ts"><img class="mainArtist" src="./Images/Mainstage/freaquency.png"/></a>
+						<a target="_blank" href="http://www.nexuzofficial.com"><img class="mainArtist" src="./Images/Mainstage/nexuz.png"/></a>
+						<a target="_blank" href="https://www.facebook.com/Audiophonic/?fref=ts"><img class="mainArtist" src="./Images/Mainstage/audiophonic.png"/></a>
+						<a target="_blank" href="https://www.facebook.com/blvckprintofficial"><img class="mainArtist" src="./Images/Mainstage/blvckprint.png"/>	
+					</p>
+				</div>
 
-		<div class="mainStageContent">
-			<h1 id="theMainTitle">MAIN STAGE</h1>
-			<p id="theMainText">				
-				<img class="mainArtist" src="./Images/Mainstage/wolfteck.png"/>	
-				<img class="mainArtist" src="./Images/Mainstage/skyentist.png"/>	
-				<img class="mainArtist" src="./Images/Mainstage/djimpulz.png"/>	
-				<img class="mainArtist" src="./Images/Mainstage/djtim.png"/>	
-				<img class="mainArtist" src="./Images/Mainstage/tdb.png"/>	
-				<img class="mainArtist" src="./Images/Mainstage/thehim.png"/>	
-				<img class="mainArtist" src="./Images/Mainstage/freaquency.png"/>	
-				<img class="mainArtist" src="./Images/Mainstage/nexuz.png"/>	
-				<img class="mainArtist" src="./Images/Mainstage/audiophonic.png"/>	
-				<img class="mainArtist" src="./Images/Mainstage/blvckprint.png"/>	
-			</p>
-		</div>
+				<div id="theFarm" class="right content">
+					<h1 class="blue" style="text-align: center">THE FARM</h1>
+					<p>
+						<img class="mainArtist hidden" src="./Images/TheFarm/sired.png"/>
+						<a target="_blank" href="https://www.facebook.com/SirEdOfficial/"><img class="mainArtist" src="./Images/TheFarm/sired.png"/></a>
+						<a target="_blank" href="https://www.facebook.com/Hafid-171973822995454/"><img class="mainArtist" src="./Images/TheFarm/hafid.png"/></a>
+						<a target="_blank" href="https://www.facebook.com/Clerkie-968704119881798/"><img class="mainArtist" src="./Images/TheFarm/clerkie.png"/>	</a>
+						<img class="mainArtist" src="./Images/TheFarm/nightcall.png"/>	
+						<a target="_blank" href="https://www.facebook.com/IAMhuismus/"><img class="mainArtist" src="./Images/TheFarm/huismus.png"/>	</a>
+						<a target="_blank" href="https://www.facebook.com/beesmunt/"><img class="mainArtist" src="./Images/TheFarm/beesmunt.png"/></a>
+						<a target="_blank" href="https://www.facebook.com/petehowlmusic/"><img class="mainArtist" src="./Images/TheFarm/petehowl.png"/></a>
+						<a target="_blank" href="https://www.facebook.com/hymst/"><img class="mainArtist" src="./Images/TheFarm/hymst.png"/></a>
+					</p>
+				</div>
+				<div class="clear"></div>
+			</section>
 
-		<div class="farmContent">
-			<h1 id="theFarmTitle">THE FARM</h1>
-			<p id="theFarmText">
-				<img style="visibility: hidden;" class="mainArtist" src="./Images/TheFarm/sired.png"/>	
-				<img class="mainArtist" src="./Images/TheFarm/sired.png"/>	
-				<img class="mainArtist" src="./Images/TheFarm/hafid.png"/>	
-				<img class="mainArtist" src="./Images/TheFarm/clerkie.png"/>	
-				<img class="mainArtist" src="./Images/TheFarm/nightcall.png"/>	
-				<img class="mainArtist" src="./Images/TheFarm/huismus.png"/>	
-				<img class="mainArtist" src="./Images/TheFarm/beesmunt.png"/>	
-				<img class="mainArtist" src="./Images/TheFarm/petehowl.png"/>
-				<img class="mainArtist" src="./Images/TheFarm/hymst.png"/>
-			</p>
-		</div>
-	</div>
+			<section id="heenEnWeer">
 
-	<div class="section" id="heenEnWeer">
+				<div class="left content">
+					<h1 class="white">HEEN & WEER</h1>
+					<p id="heenEnWeerTekst">
+						Het festival gaat door op de terreinen van Scouts Parsifal Rumbeke. Deze zijn bereikbaar via de Koestraat 20, 8800 Roeselare. De meest aangewezen transportmiddelen van en naar Parsidance zijn <span style="color:#EE4F3A">de fiets en het openbaar vervoer</span>. Er is namelijk zo goed als <span style="color:#EE4F3A">geen parking</span> te vinden in de buurt van het festival.</br></br>
+						Er wordt een <span style="color:#EE4F3A">grote fietsparking</span> voorzien op het terrein, waar stewards geregeld zullen controleren op veiligheid en orde. Bussen van de stadslijn 6 rijden tot op korte wandelafstand van het festival (halte Rumbeke Dorp).</br></br>
+						Een andere optie: laat je brengen en ophalen op  onze <span style="color:#EE4F3A">Kiss&Ride-zone</span> vlakbij het festival.
+					</p>
+				</div>
+				<div class="right content">
+					<h1 class="white">STRATENPLAN</h1>
+					<p id="heenEnWeerTekst" style="background: none; padding:0;">
+						<img src="./Images/stratenplan.png" style="width: 95%; height: auto;" />
+					</p>
+				</div>
+				<img id="locatieFoto" class="backGround" src="./Images/heen_en_weer.png"/>
+				<div class="clear"></div>
+			</section>
 
-		<div class="leftContent">
-			<h1 id="heenEnWeerHeader">HEEN & WEER</h1>
-			<p id="heenEnWeerTekst">
-				Het festival gaat door op de terreinen van Scouts Parsifal Rumbeke. Deze zijn bereikbaar via de Koestraat 20, 8880 Roeselare. De meest aangewezen transportmiddelen van en naar Parsidance zijn <span style="color:#EE4F3A">de fiets en het openbaar vervoer</span>. Er is namelijk zo goed als <span style="color:#EE4F3A">geen parking</span> te vinden in de buurt van het festival.</br></br>
-				Er wordt een <span style="color:#EE4F3A">grote fietsparking</span> voorzien op het terrein, waar stewards geregeld zullen controleren op veiligheid en orde. Bussen van de stadslijn 6 rijden tot op korte wandelafstand van het festival (halte Rumbeke Dorp).</br></br>
-				Een andere optie: laat je brengen en ophalen op  onze <span style="color:#EE4F3A">Kiss&Ride-zone</span> vlakbij het festival.
-			</p>
-		</div>
-		<div class="rightContent">
-			<h1 id="heenEnWeerHeader">STRATENPLAN</h1>
-			<p id="heenEnWeerTekst" style="background: none; padding:0;">
-				<img src="./Images/stratenplan.png" style="width: 95%; height: auto;" />
-			</p>
-		</div>
-		<img id="locatieFoto" class="backGround" src="./Images/heen_en_weer.png"/>
-	</div>
-
-	<div class="section" id="festivalTerrein">
-		<div class="leftContent">
-			<h1 id="festivalTerreinHeader">HET FESTIVALTERREIN</h1>
-			<p id="festivalTerreinTekst">
-				<span style="color:#95C11F">Wel welkom:</span><br/>
-				kleine en middelgrote rug-of andere zakken, mobiele telefoons, sigaretten, niet-professionele film-of fotocamera's, plastiek en dekens om op te zitten/liggen.<br/><br/>
-				<span style="color:#EE4F3A">Niet welkom:</span><br/>
-				scherpe voorwerpen, wapens, vuurwerk, explosieven, kettingen, tenten en ander kampeermateriaal, geluidsopnamemateriaal, professionele camera's, fotostatieven (tripods), laserpennen, selfiesticks, drones, glas, flessen (plastic & glas), drinkbussen, stoelen, grote rugzakken, gasbranders, dieren, flyers en stickers.
-			</p>
-		</div>
-		<div class="rightContent">
-			<h1 id=EHBOHeader>EERSTE HULP</h1>
-			<p id="EHBOTekst">
-				Hulpverleners van het Rode Kruis zullen aanwezig zijn op het festivalterrein. Je kan voor zowel kleine als grote zorgen bij hen terecht aan de hulppost. Deze zal duidelijk aangeduid zijn op het terrein.
-			</p>
-			<h1 id=lockersHeader>LOCKERS</h1>
-			<p id="lockersTekst">
-				Voor al wie persoonlijke spullen veilig achter slot en grendel wil bewaren, zullen er lockers beschikbaar zijn. Met je unieke sleutel kan je tijdens de festivaluren steeds bij je bezittingen.
-			</p>
-		</div>
-		<img id="terreinFoto" class="backGround" src="./Images/festivalterrein.png"/>
+			<section id="festivalTerrein">
+				<div class="left content">
+					<h1 class="grey">HET FESTIVALTERREIN</h1>
+					<p id="festivalTerreinTekst">
+						<span style="color:#95C11F">Toegelaten:</span><br/>
+						kleine en middelgrote rug-of andere zakken, mobiele telefoons, sigaretten, niet-professionele film-of fotocamera's, plastiek en dekens om op te zitten/liggen.<br/><br/>
+						<span style="color:#EE4F3A">Niet toegelaten:</span><br/>
+						scherpe voorwerpen, wapens, vuurwerk, explosieven, kettingen, tenten en ander kampeermateriaal, geluidsopnamemateriaal, professionele camera's, fotostatieven (tripods), laserpennen, selfiesticks, drones, glas, flessen (plastic & glas), drinkbussen, stoelen, grote rugzakken, gasbranders, dieren, flyers en stickers.
+					</p>
+				</div>
+				<div class="right content">
+					<h1 class="red">EERSTE HULP</h1>
+					<p id="EHBOTekst">
+						Hulpverleners van het Rode Kruis zullen aanwezig zijn op het festivalterrein. Je kan voor zowel kleine als grote zorgen bij hen terecht aan de hulppost. Deze zal duidelijk aangeduid zijn op het terrein.
+					</p>
+					<h1 class="blue">LOCKERS</h1>
+					<p id="lockersTekst">
+						Voor al wie persoonlijke spullen veilig achter slot en grendel wil bewaren, zullen er lockers beschikbaar zijn. Met je unieke sleutel kan je tijdens de festivaluren steeds bij je bezittingen.
+					</p>
+				</div>
+				<img id="terreinFoto" class="backGround" src="./Images/festivalterrein.png"/>
+					
+				<div class="clear"></div>
+			</section>
 			
-	</div>
-	
-	<div class="section" id="etenEnDrinken">	
-		<div class="leftContent">
-			<h1 id="festivalTerreinHeader">ETEN & DRINKEN</h1>
-			<p id="festivalTerreinTekst">
-				Op de festivalsite kan je drankbonnen verkrijgen aan democratische prijzen. Daarmee kan je aan de verschillende bars zowel frisdranken als alcoholische consumpties verkrijgen.</br></br>
-				Ook het eten kan je terugvinden op het festival zelf, al zijn daar geen bonnetjes voor te verkrijgen. Je kan cash betalen aan de eetstanden zelf.
-			</p>
-		</div>
-		<div class="rightContent">
-			<h1 id=EHBOHeader>VERKINDERE</h1>
-			<p id="EHBOTekst">
-				Voor de typische festivalsnacks moet je bij de truck van Catering Verkindere zijn. Je kan er gegarandeerd je grote en kleine honger of 'goesting' stillen.</br> De betaling gebeurt cash, zonder bonnetjes.
-			</p>
-			<h1 id=lockersHeader>KARIBU</h1>
-			<p id="lockersTekst">
-				Zin in iets anders? Laat u verrassen door de exotische smaken van krokodil, kangoeroe en iberico bij de foodtruck van Karibu!</br> De betaling gebeurt cash, zonder bonnetjes.
-			</p>
-		</div>
-		<img id="drankFoto" class="backGround" src="./Images/eten_en_drinken.png"/>
-	</div>
+			<section id="etenEnDrinken">	
+				<div class="left content">
+					<h1 class="grey">ETEN & DRINKEN</h1>
+					<p id="festivalTerreinTekst">
+						Op de festivalsite kan je drankbonnen verkrijgen aan democratische prijzen. Daarmee kan je aan de verschillende bars zowel frisdranken als alcoholische consumpties verkrijgen.</br></br>
+						Ook het eten kan je terugvinden op het festival zelf, al zijn daar geen bonnetjes voor te verkrijgen. Je kan cash betalen aan de eetstanden zelf.
+					</p>
+				</div>
+				<div class="right content">
+					<h1 class="red">VERKINDERE</h1>
+					<p id="EHBOTekst">
+						Voor de typische festivalsnacks moet je bij de truck van Catering Verkindere zijn. Je kan er gegarandeerd je grote en kleine honger of 'goesting' stillen.</br> De betaling gebeurt cash, zonder bonnetjes.
+					</p>
+					<h1 class="blue">KARIBU</h1>
+					<p id="lockersTekst">
+						Zin in iets anders? Laat u verrassen door de exotische smaken van krokodil, kangoeroe en iberico bij de foodtruck van Karibu!</br> De betaling gebeurt cash, zonder bonnetjes.
+					</p>
+				</div>
+				<img id="drankFoto" class="backGround" src="./Images/foto_eten&drinken.png"/>
+				<div class="clear"></div>
+			</section>
 
-	<div class="section" id="contactPage">
-<!-- 		<div class="leftContent" style="margin-top: 5%;">
-				<h1 id="lockersHeader" class="contactHeader">MAIL</h1>
-				<form id="lockersTekst" class="contactForm" action="contact.php" method="post">
-					<table>
-						<tr>
-							<td>Naam:* </td>
-							<td><input type="text" name="name" /></td>
-						</tr>
-						<tr>
-							<td>E-mail:* </td>
-							<td><input type="text" name="email" /></td>
-						</tr>
-						<tr>
-							<td style="vertical-align:top;">Bericht:* </td>
-							<td><textarea name="message" id="textArea"/></textarea></td>
-						</tr>
-						<tr>
-							<td>
-								Wat is 2 + 2 ? (Anti-spam)*
-							</td>
-							<td>
-								<input type="text" name="human"/>
-							</td>							
-						</tr>
-						<tr>
-							<td colspan="2" style="text-align: right;">
-								<input type="submit" value="Verzenden" id="contactButton"/>
-							</td>							
-						</tr>
-				    </table>
-				</form>	
-		</div> -->
-		<div class="wholePageContent" style="margin-top: 5%;">
-			<h1 id="EHBOHeader">CONTACT</h1>
-			<p id="EHBOTekst">
-				Indien je vragen hebt over Parsidance kan je ons steeds bereiken door te mailen naar <a href="mailto:parsidance@scoutsrumbeke.be?subject=Vraag%20over%20Parsidance" style="text-decoration: underline; color: white">parsidance@scoutsrumbeke.be</a>. Je kan ons ook steeds volgen op Facebook, Twitter en Instagram.</br></br></br>
-				<a target="_blank" href="https://www.facebook.com/Parsidance/?fref=ts" style="outline: none; text-align: "><img class="socialMedia" src="./Images/facebook.png"></a>
-				<a target="_blank" href="https://twitter.com/parsidance" style="outline: none;"><img class="socialMedia" src="./Images/twitter.png"></a>
-				<a target="_blank" href="https://www.instagram.com/parsidance/" style="outline: none;"><img class="socialMedia" src="./Images/instagram.png"></a>
-			</p>
-		</div>	
-		<img id="contactFoto" class="backGround" src="./Images/contact.jpg"/>
+			<section id="contactPage">
+				<div class="wholePageContent" style="margin-top: 5%;">
+					<h1 class="red">CONTACT</h1>
+					<p id="EHBOTekst">
+						Indien je vragen hebt over Parsidance kan je ons steeds bereiken door te mailen naar <a href="mailto:parsidance@scoutsrumbeke.be?subject=Vraag%20over%20Parsidance" style="text-decoration: underline; color: white">parsidance@scoutsrumbeke.be</a>. Je kan ons ook steeds volgen op Facebook, Twitter en Instagram.</br></br></br>
+						<a target="_blank" href="https://www.facebook.com/Parsidance/?fref=ts" style="outline: none; text-align: "><img class="socialMedia" src="./Images/facebook.png"></a>
+						<a target="_blank" href="https://twitter.com/parsidance" style="outline: none;"><img class="socialMedia" src="./Images/twitter.png"></a>
+						<a target="_blank" href="https://www.instagram.com/parsidance/" style="outline: none;"><img class="socialMedia" src="./Images/instagram.png"></a>
+					</p>
+				</div>	
+				<img id="contactFoto" class="backGround" src="./Images/contact.jpg"/>
+				
+				<div class="clear"></div>
+			</section>	
 
-		<div id="footer">
-			<h1 id=heenEnWeerHeader style="opacity: 0.8;">ONZE PARTNERS:</h1>
-			<div id="footerTekst">
-				<img src="./Images/Logo's/Logo's met steun van kleur.png" class="sponsors">
-				<img src="./Images/Logo's/icoon vrijetijdspas witte tekst_1.jpg" class="sponsors">
-				<img src="./Images/Logo's/Logo's met steun van kleur.png" class="sponsors">
-				<img src="./Images/Logo's/Logo's met steun van kleur.png" class="sponsors">
-			</div>	
+			<footer id="footer">
+				<h1 class="white" style="opacity: 0.8;">ONZE PARTNERS:</h1>
+				<div>
+					<img src="./Images/Logo's/Logo's met steun van kleur.png" class="sponsors">
+					<p style="vertical-align: center;">
+						<span style="color: #2f77b4; font-weight: bold;">VIVALDIS INTERIM</span>
+						<span style="color: #e14a32; font-weight: bold;">BELIUS ROESELARE</span>
+						<span style="color: #2f77b4; font-weight: bold;"> SCHOENEN LUC</span>
+						<span style="color: #e14a32; font-weight: bold;">VANDEWALLE</span>
+						<span style="color: #2f77b4; font-weight: bold;">QUAESTOR</span>
+						<span style="color: #e14a32; font-weight: bold;">NUYTTEN VERZEKERINGEN</span>
+						<span style="color: #2f77b4; font-weight: bold;">BONAFIDA</span>
+						<span style="color: #e14a32; font-weight: bold;">CIRQUE</span>
+						<span style="color: #2f77b4; font-weight: bold;">CAMERLYNCK</span>
+						<span style="color: #e14a32; font-weight: bold;">LUNETTE</span>
+						<span style="color: #2f77b4; font-weight: bold;">KBC RUMBEKE</span>
+						<span style="color: #e14a32; font-weight: bold;">SAN MARCO</span>
+						<span style="color: #2f77b4; font-weight: bold;">GET DRIVEN, GET SERVED</span>
+						<span style="color: #e14a32; font-weight: bold;">IMMO POUILLE</span>
+						<span style="color: #2f77b4; font-weight: bold;">DELAERE MICHEL</span>
+						<span style="color: #e14a32; font-weight: bold;">OLIJF</span>
+						<span style="color: #2f77b4; font-weight: bold;">TER BOS</span>
+						<span style="color: #e14a32; font-weight: bold;">OPTIEK GOETHALS</span>
+						<span style="color: #2f77b4; font-weight: bold;"></span>
+						<span style="color: #e14a32; font-weight: bold;"></span>
+					</p>
+				</div>	
+			</div>
 		</div>
-		
-	</div>	
-</div>
-
-</body>
+	</body>
 </html>

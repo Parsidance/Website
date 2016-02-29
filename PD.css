@@ -1,9 +1,11 @@
+html{
+    height: 100%;
+}
 body {
     margin-top: 0px;
     margin-bottom: 0px;
     background-color: #FFFFFF;
     display: block;
-    min-height: 100%;
     font-family: Helvetica, Cambria, Cochin, Georgia, Times, serif;
     overflow-y: -moz-scrollbars-none;
     -ms-overflow-style: none;
@@ -14,12 +16,46 @@ body {
     margin-right: 0;
     margin-left: 0;
     overflow-x: hidden;
-    width: 100vw;
+    min-height: 100%;
+    width: 100%;
 }
-    button::-moz-focus-inner { border: 0; }
+button::-moz-focus-inner { border: 0; }
 
+/*bodyContent height and width definition*/
+#bodyContent{
+    height: auto !important;
+    min-height: auto;
+    position: relative;
+}
 
-#nav {
+header{
+    margin-top:0;
+    position: fixed;
+    display: block;
+    z-index: 300;
+}
+
+/*Responsive body*/
+
+@media screen and (orientation:portrait) {
+
+    header {
+        width:30%;
+        height: 100%;
+
+    }
+}
+@media screen and (orientation:landscape) {
+   
+    header{
+        height: 50px;
+
+    }
+}
+
+/*Navigation*/
+
+nav {
     position: fixed;
     display: block;
     margin-bottom: 0;
@@ -32,7 +68,7 @@ body {
     z-index: 2;
 }
 
-    #nav ul {
+    nav ul {
         padding-left: 0;
         margin: 0;
         list-style-type: none;
@@ -40,7 +76,7 @@ body {
         width: 100%;
     }
 
-        #nav ul li {
+        nav ul li {
             height: auto;
             padding-left: .5%;
             padding-right: .5%;
@@ -51,7 +87,7 @@ body {
             background-color: none;
         }
 
-            #nav ul li a {
+            nav ul li a {
                 padding-bottom: 5px;
                 text-align: left;
                 text-decoration: none; 
@@ -59,9 +95,88 @@ body {
                 outline: 0;
             } 
 
-            #nav ul li a:hover{
+            nav ul li a:hover{
                 opacity: 1;
             }
+
+.mobileNav {
+  float: left;
+  width:300px;
+  height: 100%;  
+  margin-left: -300px;  
+    -webkit-transition: all 200ms ease-in-out;
+  -moz-transition: all 200ms ease-in-out;
+  -o-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+.slideIn{
+    margin-left:0 !important;  
+    -webkit-transition: all 200ms ease-in-out;
+  -moz-transition: all 200ms ease-in-out;
+  -o-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+.mobileNav .menu {
+  background-color: #1A1A1B;
+  margin-top: 0;
+  padding-top:0;
+  height: 100%;
+  list-style-type: none;
+  list-style-image: none;
+  padding-top: 35%; 
+}
+
+.mobileNav .menu li a{
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family:Helvetica, Verdana, Geneva, Tahoma, sans-serif;
+    text-align: left;
+    font-style: normal;
+    font-size: xx-large;
+    font-weight: lighter;
+}
+
+.mobileNav .menu li .tickets{
+    color: #EE4F3A;
+}
+
+.mobileNav .menu li a img{
+    width: 50px;
+    height: 45px;
+}
+
+/*Responsive navigation*/
+
+@media screen and(orientation:portrait){
+    nav{
+        display:inline-block;
+    }
+
+    .mobileNav{
+        display: none;
+    }
+}
+
+@media screen and(orientation:landscape){
+    nav{
+        display: none;
+    }    
+
+    .mobileNav{
+        display:inline;
+    }   
+    .mobileNav .menu{
+        left: -50px;
+    }
+    .mobileNav .menu ul li a{
+        font-size: large;
+    }
+}
+
+/*Navigation colors (to contrast background)*/
+
 .default{
     -webkit-transition: all .1s ease-out;
     -moz-transition: all .1s ease-out;
@@ -69,7 +184,6 @@ body {
     transition: all .1s ease-out;
     color:#1A1A1B;
 }
-
 .default.tickets{
     -webkit-transition: all .1s ease-out;
     -moz-transition: all .1s ease-out;
@@ -77,6 +191,7 @@ body {
     transition: all .1s ease-out;
     color:#EE4F3A;
 }
+
 .blue{
     -webkit-transition: all .1s ease-out;
     -moz-transition: all .1s ease-out;
@@ -84,7 +199,6 @@ body {
     transition: all .1s ease-out;
     color:#1A1A1B;
 }
-
 .blue.tickets{
     -webkit-transition: all .1s ease-out;
     -moz-transition: all .1s ease-out;
@@ -92,6 +206,7 @@ body {
     transition: all .1s ease-out;
     color:#FFFFFF;
 }
+
 .grey{
     -webkit-transition: all .1s ease-out;
     -moz-transition: all .1s ease-out;
@@ -99,7 +214,6 @@ body {
     transition: all .1s ease-out;
     color: #FFFFFF;
 }
-
 .grey.tickets{
     -webkit-transition: all .1s ease-out;
     -moz-transition: all .1s ease-out;
@@ -126,47 +240,155 @@ body {
     border-top: 2px solid rgba(255, 255, 255, .7);  
 }
 
-#home{
+/*Home button image layout*/
+.home{
     width:15px;
     height: 13px;
 }
 
-#arrow{    
-    width: 10%;
-    height: auto;
-    opacity: 0.7;
+/*section layout*/
+
+section{
+    text-align: center; 
+    position:inherit;    ;
+    top:0; 
+    bottom: 0;
+    left: 0;
+    min-height: 100%;
+    width: 100%;  
 }
 
-.nextPageButton{
-    width:10%;
+section .clear{
+    clear: both;
+}
+
+.logo{
     position: relative;
-    margin-left: 80%;
-    margin-bottom: 10%;
-    border-radius:10px;
+    height: auto;
+    margin-right: 30%;
+
 }
 
-.nextPageButton a{
-    text-decoration: none;
-    outline: 0;
-    font-weight: bold;
-    opacity: 0.7;
+@media screen and (orientation:landscape){        
+
+    section .content{
+        padding-top: 10%;
+        width: 29%;
+    }
+    section .right{
+        margin-right: 20%;
+        float:right;
+        text-align: right;
+    }
+    section .left{
+        margin-left: 20%;
+        float: left;
+        text-align: left;
+    }
 }
 
-.nextPageButton a:hover{
-    opacity: 1;
-}
-
-.nextPageButton.default{
-    border: 2px solid rgba(26, 26, 27, .7);
+@media screen and (orientation:portrait){
     
+    section .content{
+        float: left;
+        width: 80%;
+    }
+    section .right{
+        margin-left: 10%;
+        margin-right: 10%;
+        float:left;
+        text-align: center;
+    }
+    section .left{
+        margin-left: 10%;
+        margin-right: 10%;
+        float: left;
+        text-align: center;
+    }
 }
 
-.nextPageButton.default a{
+/*Header layout*/
+
+
+h1{
+    font-family: 'Raleway';
+    font-weight: bold;  
+    margin-bottom: -21px;
+}
+
+h1.white{
+    color: #FFFFFF;
+}
+
+h1.grey{
     color:#1A1A1B;
 }
 
-.nextPageButton.grey{
-    border:1px dotted;
+h1.red{
+    color: #E14A32;
+}
+
+h1.blue{
+    color: #2F77B4;
+}
+
+@media screen and (orientation:landscape){        
+    
+    h1{
+        font-size: 30px;
+    }
+}
+
+@media screen and (orientation:portrait){
+    
+    h1{
+        font-size: 30px;
+    }
+}
+
+/*Home page layout*/
+
+@media screen and (orientation:landscape){        
+            
+    #landingPage .logo {    
+            width: 50%; 
+            margin-left: 26%;   
+            margin-bottom: -2%;
+    }
+
+    #landingPage .nameDate{
+            padding-left: 1%;
+            width: 25%;
+            height: auto;
+    }
+}
+
+@media screen and (orientation:portrait){
+    
+    #landingPage .logo {    
+            width: 130%;  
+            margin-bottom: -20%;
+            margin-left: -12%;
+            margin-top: -10%;
+            z-index: 6;
+    }
+
+    #landingPage .nameDate{
+            padding-left: 1%;
+            width: 80%;
+            height: auto;
+            z-index: 3;
+    }
+}
+
+/*lineup page layout*/
+
+#lineUpPage{
+    background: rgba(26, 26, 27, .9);
+}
+
+#lineUpPage .content{
+    padding-top: 0;
 }
 
 #theMainTitle{
@@ -185,9 +407,28 @@ body {
     padding: 0;
 }
 
-#theFarmTitle{
-    color: rgb(47, 119, 180);
-    opacity: .9;
+@media screen and (orientation:landscape){
+    .mainArtist.hidden{
+        visibility: hidden;
+    }
+
+    #lineUpPage .logo{
+            position: relative;
+            width: 20%; 
+            margin-left: 30%;   
+    }
+}
+
+@media screen and (orientation:portrait){
+    .mainArtist.hidden{
+        display: none;
+    }
+
+    #lineUpPage .logo{
+            position: relative;
+            width: 60%; 
+            margin-left: 20%;   
+    }
 }
 
 #theFarmText{
@@ -196,36 +437,11 @@ body {
     padding:2%;
 }
 
-#lineUpPage{
-    background: rgba(26, 26, 27, .9);
-}
-
-#infoPage{
-
-}
-
-#contactPage{
-}
-
-h1{
-    font-family: 'Raleway';
-    font-weight: bold;  
-    margin-bottom: -22px;
-}
-
-#heenEnWeerHeader{
-    color: #FFFFFF;
-}
-
 #heenEnWeerTekst{
     background-color: rgb(255, 255, 255);
     word-wrap: normal;
     font-size: smaller;
     padding:2%;
-}
-
-#festivalTerreinHeader{
-    color:#1A1A1B;
 }
 
 #festivalTerreinTekst{
@@ -236,20 +452,12 @@ h1{
     color: white;
 }
 
-#EHBOHeader{
-    color: #e14a32;
-}
-
 #EHBOTekst{
     background-color: #e14a32;
     word-wrap: normal;
     font-size: smaller;
     padding:2%;
     color: white;
-}
-
-#lockersHeader{
-    color: rgb(47, 119, 180);
 }
 
 #lockersTekst{    
@@ -260,78 +468,14 @@ h1{
     color: white;
 }
 
-#heenEnWeer{
-}
-
-#festivalTerrein{
-}
-
-#etenEnDrinken{
-}
-
 .backGround{
     margin: 0;
     padding: 0;
     left: 0;
-    position: absolute;
-    width: 100vw;
+    position: relative;
+    width: 100%;
     height: auto;
     z-index: -1;
-}
-
-.fixed{
-    position: fixed;
-    display: block;    
-    top: 0;
-    width: 100vw;
-}
-
-#mobileNav {
-  float: left;
-  width:300px;
-  height: 100%;  
-  margin-left: -300px;  
-    -webkit-transition: all 500ms ease-in-out;
-  -moz-transition: all 500ms ease-in-out;
-  -o-transition: all 500ms ease-in-out;
-  transition: all 500ms ease-in-out;
-}
-
-.slideIn{
-    margin-left:0 !important;  
-    -webkit-transition: all 500ms ease-in-out;
-  -moz-transition: all 500ms ease-in-out;
-  -o-transition: all 500ms ease-in-out;
-  transition: all 500ms ease-in-out;
-}
-
-#mobileNav .menu {
-  background-color: #1A1A1B;
-  margin-top: 0;
-  padding-top:0;
-  height: 100%;
-  list-style-type: none;
-  list-style-image: none;
-  padding-top: 35%; 
-}
-
-#mobileNav .menu li a{
-    color: #FFFFFF;
-    text-decoration: none;
-    font-family:Helvetica, Verdana, Geneva, Tahoma, sans-serif;
-    text-align: left;
-    font-style: normal;
-    font-size: xx-large;
-    font-weight: lighter;
-}
-
-#mobileNav .menu li .tickets{
-    color: #EE4F3A;
-}
-
-#mobileNav .menu li a img{
-    width: 50px;
-    height: 45px;
 }
 
 #infoTiles{
@@ -343,7 +487,7 @@ h1{
   top: 15px;
   left: 10px;
   border:none;
-  width: 10vw;  
+  width: 10%;  
   outline: none;
   padding:0;
   background:none;
@@ -358,18 +502,6 @@ h1{
 .expand {
     display: block !important; 
 }
-
-.contactForm{
-    margin-top: 13px;
-}
-
-#contactButton{
-    padding:5px 15px; 
-    background:#FFFFFF; 
-    border:0 none;
-    cursor:pointer;
-    -webkit-border-radius: 5px;
-    border-radius: 5px; }
 
 #lockersTekst table{
     width: 100%;
@@ -391,18 +523,19 @@ h1{
     clear: both;
 }
 
-#footer{
-    float:left;
-    padding-top: 50px;
+/*footer layout*/
+
+footer{
+    position: absolute;
     width: 100%;
-    top:0;
-    height: 250px;
+    height: 300px;
+    bottom: 0;
     z-index: 2;
     overflow: hidden;
     text-align: left;
 }
 
-#footerTekst{
+footer div{
     opacity: 0.8;
     background-color: #FFF;
     height: 100%;
@@ -411,16 +544,16 @@ h1{
 
 }
 
-.sponsors{
+footer .sponsors{
     float: left;
-    height: 40%;
+    height: 70%;
     width: auto;
     vertical-align: center;
 }
 
     .socialMedia{
         margin-right: 3%;
-        height:5vh;
+        height: 30px;
         width: auto;
 
     }
@@ -428,38 +561,13 @@ h1{
 /*This is all the css specifically for screens bigger than 720p*/
 
 @media screen and (orientation:landscape) {
-    body {
-    }
-   
-    header, nav {
-        display: block;
-    }
-
-    footer{
-    }
-
-    header {
-        position: fixed;
-        margin-top:0;
-        z-index: 300;
-        height: 50px;
-
-    }
-
-    #nav{
-        display: block;
-    }
-
-    #mobileNav{
-        display: none;
-    }
 
     .backGround{
         margin: 0;
         padding: 0;
         left: 0;
         position: absolute;
-        width: 110vw;
+        width: 100%;
         height: auto;
         z-index: -1;
         overflow: hidden;
@@ -469,71 +577,10 @@ h1{
         width: 100%;    
     }
 
-
-    #logo { 
-        z-index: 0;
-        position: relative;
-        width: 50%; 
-        height: auto;
-        margin-right: 30%;
-        margin-left: 26%;   
-        margin-bottom: -2%;
-    }
-
-    #nameDate{
-        padding-left: 1%;
-        width: 25%;
-        height: auto;
-    }
-
-    #lineupLogo {
-        position: relative;
-        width: 20%; 
-        height: auto;
-        margin-right: 30%;
-        margin-left: 30%;    
-    }
-
-    h1{
-        font-family: 'Raleway';
-        font-weight: bold;  
-        margin-bottom: -22px;
-    }
-
-    .mainStageContent{
-        position: absolute;
-        width: 29vw;
-        left:25vw;
-        text-align: center;
-    }
-
-    .farmContent{
-        position: absolute;
-        width: 29vw;
-        left:50vw;
-        text-align: center;
-    }
-
-    .leftContent{
-        padding-top: 10%;
-        float: left;
-        width: 29vw;
-        margin-left: 20%;
-        text-align: left;
-    }
-
-    .rightContent{
-        padding-top: 10%;
-        float: right;
-        width: 29vw;
-        margin-right: 20%;
-        text-align: right;
-    }
-
     .wholePageContent{
         padding-top: 10%;
         float: left;
-        width: 60vw;
+        width: 60%;
         margin-left: 20%;
         text-align:left;
     }
@@ -552,17 +599,6 @@ h1{
 
     #lockersTekst{    
         font-size: smaller;
-    }
-
-    .section{
-
-        text-align: center; 
-        position: relative;
-        top:0; 
-        bottom: 0;
-        left: 0;
-        min-height: 100vh;
-        width: 100%;  
     }
 
     .contactForm{
@@ -584,47 +620,13 @@ h1{
 /*This is all the css for screens smaller than 720p (in other words, mobile devices)*/
 
 @media screen and (orientation:portrait) {
-    body{
-        width: 100%;
-        margin-left:0;
-        border:none;
-    }
 
-    header,  footer {
-        display: block;
-    }
-
-
-    header {
-        position: fixed;
-        margin-top:0;
-        z-index: 300;
-        width:30vw;
-        height: 100vh;
-
-    }
-
-
-    article h1{
-        margin-top:1%;
-    }
-
-    #nav{
+    nav{
         display:none;
     }
 
     #hamburger{
         display: block;
-    }
-
-    #mobileNav{
-        display:inline;
-    }   
-    #mobileNav .menu{
-        left: -50px;
-    }
-    #mobileNav .menu ul li a{
-        font-size: large;
     }
     #indexFoto{
         width:90%;
@@ -635,7 +637,7 @@ h1{
         padding: 0;
         left: 0;
         position: absolute;
-        height: 110vh;
+        height: 100%;
         width: auto;
         z-index: -1;
     }
@@ -662,35 +664,10 @@ h1{
         margin-right: 25%;  
     }
 
-    h1{
-        font-family: 'Raleway';
-        font-size: 30px;
-        font-weight: bold;  
-        margin-bottom: -22px;
-        margin-top: 0;  
-    }
-    
-    .leftContent{
-        padding-top: 2%;
-        float: left;
-        width: 80vw;
-        margin-left: 10%;
-        margin-right: 10%;
-        text-align: left;
-    }
-
-
-    .rightContent{
-        float: left;
-        width: 80vw;
-        margin-right: 10%;
-        margin-left: 10%;
-        text-align: left;
-    }
 
     .wholePageContent{
         float: left;
-        width: 80vw;
+        width: 80%;
         margin-right: 10%;
         margin-left: 10%;
         text-align:left;
@@ -710,17 +687,6 @@ h1{
 
     #lockersTekst{    
         font-size: medium;
-    }
-
-    .section{
-
-        text-align: center; 
-        position: relative;
-        top:0; 
-        bottom: 0;
-        left: 0;
-        min-height: 100vh;
-        width: 100%;  
     }
 
     .contactForm{
@@ -743,14 +709,14 @@ h1{
 @media screen and (max-width: 1200px) {
 
 
-.backGround{
-    margin: 0;
-    padding: 0;
-    left: 0;
-    position: absolute;
-    height: 100vh;
-    width: auto;
-    z-index: -1;
-}
+    .backGround{
+        margin: 0;
+        padding: 0;
+        left: 0;
+        position: absolute;
+        height: 100%;
+        width: auto;
+        z-index: -1;
+    }
 
 }
