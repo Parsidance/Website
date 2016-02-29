@@ -552,12 +552,32 @@ footer .sponsors{
     margin-right: 10px;
 }
 
-    .socialMedia{
+.socialMedia{
         margin-right: 3%;
         height: 30px;
         width: auto;
 
+}
+
+@media screen and (orientation:landscape){
+    footer{
+        height: 150px;
     }
+}
+
+@media screen and (orientation:portrait){
+    footer{
+        height: 350px;
+    }
+    footer .sponsors{
+        float: left;
+        vertical-align: bottom;
+        height: 40%;
+        width: auto;
+        vertical-align: center;
+        margin-right: 10px;
+    }
+}
 
 /*This is all the css specifically for screens bigger than 720p*/
 
