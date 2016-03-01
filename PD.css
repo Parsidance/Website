@@ -7,7 +7,6 @@ body {
     background-color: #FFFFFF;
     display: block;
     font-family: Helvetica, Cambria, Cochin, Georgia, Times, serif;
-    overflow-y: -moz-scrollbars-none;
     -ms-overflow-style: none;
     -ms-border-radius: 10px 10px 0 0;
     -moz-border-radius: 10px 10px 0 0;
@@ -476,6 +475,7 @@ h1.blue{
     width: 100%;
     height: auto;
     z-index: -1;
+    overflow-x: hidden;
 }
 
 #infoTiles{
@@ -661,6 +661,7 @@ footer .sponsors{
         height: 100%;
         width: auto;
         z-index: -1;
+        overflow-x: hidden;
     }
 
     #logo { 
