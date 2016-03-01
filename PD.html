@@ -50,6 +50,14 @@
 						   $('#hamburgerIcon').attr('src', './Images/hamburger_icon.png');
 				 });
 
+				 $('.link').click(function(){
+				 		$('.mobileNav').toggleClass('slideIn');
+				 		if($('#hamburgerIcon').attr('src') == './Images/hamburger_icon.png')
+   							$('#hamburgerIcon').attr('src', './Images/hamburger_icon_white.png');
+						else
+						   $('#hamburgerIcon').attr('src', './Images/hamburger_icon.png');
+				 });
+
 				$(".fancybox")
 						.attr('rel', 'gallery')
 					    .fancybox({
@@ -162,12 +170,12 @@
 					<button id="hamburger" style="outline: none;"><img id="hamburgerIcon" src="./Images/hamburger_icon.png"/></button>
 				<div class="mobileNav">
 					<ul class="menu">
-						<li><a href="#landingPage"><img id="home" src="./Images/home_white.png"/></a></li>
-						<li><a style="color: #e14a32;" href="#lineUpPage">MAIN STAGE</a></li>
-						<li><a style="color: rgb(47, 119, 180);" href="#theFarm">THE FARM</a></li>
-						<li><a href="#heenEnWeer">INFO</a></li>
-						<li><a href="#contactPage">CONTACT</a></li>
-						<li><a href="#footer">PARTNERS</a></li>
+						<li><a class="link" href="#landingPage"><img id="home" src="./Images/home_white.png"/></a></li>
+						<li><a class="link" style="color: #e14a32;" href="#lineUpPage">MAIN STAGE</a></li>
+						<li><a class="link" style="color: rgb(47, 119, 180);" href="#theFarm">THE FARM</a></li>
+						<li><a class="link" href="#heenEnWeer">INFO</a></li>
+						<li><a class="link" href="#contactPage">CONTACT</a></li>
+						<li><a class="link" href="#footer">PARTNERS</a></li>
 						<li style="background-color: white;"><a style="color: #1A1A1B;" target="_blank" href="https://shop.ticketscript.com/channel/web2/start-order/rid/67RR7KM4/language/nl" class="tickets">TICKETS</a></li>
 					</ul>
 				</div>
