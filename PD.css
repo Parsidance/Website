@@ -527,10 +527,9 @@ h1.blue{
 
 footer{
     position: absolute;
-    width: 100%;
-    height: 150px;
-    bottom: 0;
+    bottom: -60px;
     z-index: 2;
+    margin-top: 200px;
     overflow: hidden;
     text-align: left;
 }
@@ -544,14 +543,16 @@ footer div{
 
 }
 
+footer div.logoDiv{
+    width: 10%;
+    float: left;
+}
 footer .sponsors{
     float: left;
-    height: 60%;
+    height: 50%;
     width: auto;
-    vertical-align: center;
-    margin-right: 10px;
+    padding:10px;
 }
-
 .socialMedia{
         margin-right: 3%;
         height: 30px;
@@ -561,21 +562,45 @@ footer .sponsors{
 
 @media screen and (orientation:landscape){
     footer{
-        height: 150px;
+        height: 3%;
+        width: 100%;
     }
+    footer .mobileVisible{
+        display: none;
+    }
+
+    footer .mobileHidden{
+        display: block;
+    }
+
+    footer div.sponsorsDiv{
+        width: 90%;
+        float: left;
+    }
+
 }
 
 @media screen and (orientation:portrait){
     footer{
-        height: 350px;
+        height: 250px;
+        font-size: small;
+        width: 100%;
     }
-    footer .sponsors{
+
+    footer .mobileHidden{
+        display: none;
+    }
+
+    footer .mobileVisible{
+        display: inline-block
+    }
+
+    footer div.sponsorsDiv{
+        padding-left:10px;
+        padding-right:10px;
+        word-wrap: break-word;
+        width: 100%;
         float: left;
-        vertical-align: bottom;
-        height: 40%;
-        width: auto;
-        vertical-align: center;
-        margin-right: 10px;
     }
 }
 
@@ -688,11 +713,12 @@ footer .sponsors{
 
 
     .wholePageContent{
+        margin-top: -20px;
         float: left;
         width: 80%;
         margin-right: 10%;
         margin-left: 10%;
-        text-align:left;
+        text-align:center;
     }
 
     #heenEnWeerTekst{
@@ -728,8 +754,7 @@ footer .sponsors{
 }
 
 
-@media screen and (max-width: 1200px) {
-
+@media screen and (max-width: 1600px) {
 
     .backGround{
         margin: 0;
