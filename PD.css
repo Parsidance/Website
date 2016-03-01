@@ -25,6 +25,7 @@ button::-moz-focus-inner { border: 0; }
     height: auto !important;
     min-height: auto;
     position: relative;
+    overflow-x:hidden !important;
 }
 
 header{
@@ -112,6 +113,7 @@ nav {
 .slideIn{
     margin-left:0 !important;  
     -webkit-transition: all 200ms ease-in-out;
+  -webkit-transform: translateZ(0);
   -moz-transition: all 200ms ease-in-out;
   -o-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
